@@ -1,5 +1,9 @@
 import { ENTRYPOINT } from '@/shared/constants/entrypoint';
-import { IParamsLogin, IResponseLogin } from '@/shared/types/auth';
+import {
+  IParamsLogin,
+  IResponseLogin,
+  IResponseLogout,
+} from '@/shared/types/auth';
 import axios, { AxiosError, AxiosInstance } from 'axios';
 
 /** Setting timeout of axios */
@@ -51,6 +55,11 @@ class AxiosClient {
   // api login
   apiLogin(params: IParamsLogin) {
     return this.axios.post<IResponseLogin>(ENTRYPOINT.login, params);
+  }
+
+  // api logout
+  apiLogout() {
+    return this.axios.post<IResponseLogout>(ENTRYPOINT.logout);
   }
 }
 

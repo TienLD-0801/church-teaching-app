@@ -1,6 +1,7 @@
 import { store } from '@/stores';
-import { SplashScreen, Stack } from 'expo-router';
-import { Provider } from 'react-redux';
+import { Stack, useRouter } from 'expo-router';
+import { Button } from 'react-native';
+import { Provider, useDispatch } from 'react-redux';
 
 export default function Layout() {
   return (

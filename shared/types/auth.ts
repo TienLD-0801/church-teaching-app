@@ -31,3 +31,11 @@ export interface ILoginError {
   timestamp: string;
   error: string;
 }
+
+export interface IResponseLogout {
+  status: string;
+  message: string;
+  timestamp: string;
+  pageResponse: null;
+  data: null;
+}
