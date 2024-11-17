@@ -13,6 +13,7 @@ import {
 //import { encryptTransform } from 'redux-persist-transform-encrypt';
 import storage from 'redux-persist/lib/storage';
 import userInfoReducer from '@/stores/slices/User';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 /* Defining the shape of the state. */
 export interface RootStatesType {
   userInfo: IDataLoginResponse;
@@ -37,7 +38,7 @@ const ROOT_KEY = 'root';
 const persistConfig = {
   key: ROOT_KEY,
   version: 1,
-  storage,
+  storage: AsyncStorage,
   whitelist: ['userInfo'],
   // transforms: [encryptor],
 };
